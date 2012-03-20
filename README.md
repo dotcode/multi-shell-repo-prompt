@@ -34,7 +34,7 @@ If you want to make your OS X prompt as pretty as shown, have a read of [Candy C
 
 Installation
 ------------
-Fork the repo then link to `prompt.sh` from within your `~/.bash_profile` or `~/.zshrc` or wha'eva (note that you should remove any pre-existing lines in those files that start with 'export PS1=' (in bash) or 'PROMPT=' (in zsh)):
+Fork the repo then link to `prompt.sh` from within your `~/.bash_profile` or `~/.zshrc` or wha'eva (note that you should remove any pre-existing lines in those files that start with `export PS1=` (in bash) or `PROMPT=` (in zsh)):
 
 	[… usual stuff contained in .bash_profile or .zshrc or wha'eva …]
 	
