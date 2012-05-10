@@ -172,6 +172,10 @@ function repo_status {
 	# status of current repo
 	if in_git_repo; then
 		local lstatus="`get_repo_status | sed 's/^ */g/'`"
+		local ahead="`git status | grep 'Your branch is ahead' | sed -Ee 's/^.*([0-9]+) commit.*$/\1/'`"
+		if [[ "$ahead" != '' ]]; then
+			local branch="${branch}${msrp_preposition_color} + $ahead"
+		fi
 	elif in_mercurial_repo; then
 		local lstatus="`get_repo_status | sed 's/^ */m/'`"
 	else
