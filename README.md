@@ -10,7 +10,7 @@ As well as the usual stuff you might like in your prompt, it displays which part
 
 This is entirely based on Steve Losh's excellent work, both his "[extravagant zsh prompt](http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/)" (note his zsh prompt is more sophisticated than this one detailed here) - and [hg-prompt](http://stevelosh.com/projects/hg-prompt/) as well (which this is dependent upon).
 
-The infinitely talented [Andrew Hayward](https://github.com/andrewhayward)([@arhayward](twitter.com/arhayward)) wrote most of the code, I just fixed a few bugs (doubtlessly introducing a few of my own) and made it work in zsh as well as bash (I've tried to use as much shell-agnostic code as possible - although there's probably quite a bit of it that is non POSIX-compliant - would be nice to see it forked and working in other shells as well!)
+The infinitely talented [Andrew Hayward](https://github.com/andrewhayward)([@arhayward](https://twitter.com/arhayward)) wrote most of the code, I just fixed a few bugs (doubtlessly introducing a few of my own) and made it work in zsh as well as bash (I've tried to use as much shell-agnostic code as possible - although there's probably quite a bit of it that is non POSIX-compliant - would be nice to see it forked and working in other shells as well!)
 
 Oh, and - like 90% of projects on teh internets - I also received a bit of help from [Matthew Somerville](http://www.dracos.co.uk/)([@dracos](https://twitter.com/dracos)) as well.
 
