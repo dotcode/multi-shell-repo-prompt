@@ -171,9 +171,13 @@ function repo_status {
 
 	# status of current repo
 	if in_git_repo; then
-		local lstatus="`get_repo_status | sed 's/^ */g/'`"
+		local lstatus="`get_repo_status | sed 's/^/g/'`"
+		local ahead="`git status | grep 'Your branch is ahead' | sed -Ee 's/^.*([0-9]+) commit.*$/\1/'`"
+		if [[ "$ahead" != '' ]]; then
+			local branch="${branch}${msrp_preposition_color} + $ahead"
+		fi
 	elif in_mercurial_repo; then
-		local lstatus="`get_repo_status | sed 's/^ */m/'`"
+		local lstatus="`get_repo_status | sed 's/^/m/'`"
 	else
 		local lstatus=''
 	fi
@@ -186,13 +190,13 @@ function repo_status {
 		local changes=""
 
 		# modified file count
-		local modified="$(echo "$lstatus" | grep -c '^[gm]M')"
+		local modified="$(echo "$lstatus" | grep -c '^[gm] *M')"
 		if [[ "$modified" -gt 0 ]]; then
 			changes="$modified changed"
 		fi
 		
 		# added file count
-		local added="$(echo "$lstatus" | grep -c '^[gm]A')"
+		local added="$(echo "$lstatus" | grep -c '^[gm] *A')"
 		if [[ "$added" -gt 0 ]]; then
 			if [[ "$changes" != "" ]]; then
 				changes="${changes}, "
@@ -201,7 +205,7 @@ function repo_status {
 		fi
 		
 		# removed file count
-		local removed="$(echo "$lstatus" | grep -c '^(mR|gD)')"
+		local removed="$(echo "$lstatus" | grep -c '^(m *R|g *D)')"
 		if [[ "$removed" -gt 0 ]]; then
 			if [[ "$changes" != "" ]]; then
 				changes="${changes}, "
@@ -210,7 +214,7 @@ function repo_status {
 		fi
 		
 		# renamed file count
-		local renamed="$(echo "$lstatus" | grep -c '^gR')"
+		local renamed="$(echo "$lstatus" | grep -c '^g *R')"
 		if [[ "$renamed" -gt 0 ]]; then
 			if [[ "$changes" != "" ]]; then
 				changes="${changes}, "
@@ -219,7 +223,7 @@ function repo_status {
 		fi
 		
 		# missing file count
-		local missing="$(echo "$lstatus" | grep -c '^m!')"
+		local missing="$(echo "$lstatus" | grep -c '^m *!')"
 		if [[ "$missing" -gt 0 ]]; then
 			if [[ "$changes" != "" ]]; then
 				changes="${changes}, "
@@ -228,12 +232,21 @@ function repo_status {
 		fi
 		
 		# untracked file count
-		local untracked="$(echo "$lstatus" | grep -c '^[gm]?')"
+		local untracked="$(echo "$lstatus" | grep -c '^[gm] *?')"
 		if [[ "$untracked" -gt 0 ]]; then
 			if [[ "$changes" != "" ]]; then
 				changes="${changes}, "
 			fi
 			changes="${changes}${untracked} untracked"
+		fi
+		
+		# staged file count
+		local staged="$(echo "$lstatus" | grep -c '^g[A-Z]')"
+		if [[ "$staged" -gt 0 ]]; then
+			if [[ "$changes" != "" ]]; then
+				changes="${changes}, "
+			fi
+			changes="${changes}${staged} staged"
 		fi
 		
 		if [[ "$changes" != "" ]]; then
