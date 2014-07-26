@@ -1,11 +1,11 @@
 function under_bash () {
-	[[ "`ps -p $$ | tail -1|awk '{print $NF}'`" == "-bash" ]] 2>&1 && return
-	return 1
+	[[ "`ps -p $$ | tail -1| grep -o 'bash$'`" == "bash" ]] 2>&1 && return
+    return 1
 }
 
 function under_zsh () {
-	[[ "`ps -p $$ | tail -1|awk '{print $NF}'`" == "-zsh" ]] 2>&1 && return
-	return 1
+	[[ "`ps -p $$ | tail -1| grep -o 'zsh$'`" == "zsh" ]] 2>&1 && return
+    return 1
 }
 
 msrp_color_red=$'\e[31m'
