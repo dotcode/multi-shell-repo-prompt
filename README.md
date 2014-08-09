@@ -1,6 +1,14 @@
 Multi-shell repo prompt
 ==========
-This is a shell script that provides useful information (in your prompt) about the repository that you are in. It currently works for [Git](http://git-scm.com/) and [Mercurial](http://mercurial.selenic.com/), under [zsh](http://en.wikipedia.org/wiki/Zsh) as well as [bash](http://en.wikipedia.org/wiki/Zsh).
+This is a shell script that provides useful information (in your prompt) about the repository that you are in. It currently works for [Git](http://git-scm.com/) and [Mercurial](http://mercurial.selenic.com/), under [zsh](http://en.wikipedia.org/wiki/Zsh) as well as [bash](http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29).
+
+Under bash, when in a dirty git repo:
+
+![bash git dirty](https://github.com/downloads/dotcode/multi-shell-repo-prompt/bash-git-dirty.png)
+
+Under zsh, when in a clean hg repo:
+
+![zsh hg clean](https://github.com/downloads/dotcode/multi-shell-repo-prompt/zsh-hg-clean.png)
 
 It's been written to make it easy to tweak the colours and the characters used, so you can get it setup to dislay how you want without having to dirty your hands with too much of that filthy shell code that's like … _so_ from the 1970's. The aim when tweaking this was to (as far as possible) have one block of code that could be dropped into a bash or zsh initialisation file and "just work".
 
@@ -13,17 +21,6 @@ This is entirely based on Steve Losh's excellent work, both his "[extravagant zs
 The infinitely talented [Andrew Hayward](https://github.com/andrewhayward)([@arhayward](https://twitter.com/arhayward)) wrote most of the code, I just fixed a few bugs (doubtlessly introducing a few of my own) and made it work in zsh as well as bash (I've tried to use as much shell-agnostic code as possible - although there's probably quite a bit of it that is non POSIX-compliant - would be nice to see it forked and working in other shells as well!)
 
 Oh, and - like 90% of projects on teh internets - I also received a bit of help from [Matthew Somerville](http://www.dracos.co.uk/)([@dracos](https://twitter.com/dracos)) as well.
-
-How does it look
-----------------
-
-Under bash, when in a dirty git repo:
-
-![bash git dirty](https://github.com/downloads/dotcode/multi-shell-repo-prompt/bash-git-dirty.png)
-
-Under zsh, when in a clean hg repo:
-
-![zsh hg clean](https://github.com/downloads/dotcode/multi-shell-repo-prompt/zsh-hg-clean.png)
 
 
 Requirements
