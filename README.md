@@ -31,7 +31,7 @@ If you want to make your OS X prompt as pretty as shown, have a read of [Candy C
 
 Installation
 ------------
-Fork the repo then link to `prompt.sh` from within your `~/.bash_profile` or `~/.zshrc` or wha'eva (note that you should remove any pre-existing lines in those files that start with `export PS1=` (in bash) or `PROMPT=` (in zsh)):
+All you need is the file `prompt.sh` from this repo (which you get by cloning or forking the repo or simply downloading the file directly - cloning lets you pull newest versions, though). Then import it from within your `~/.bash_profile` or `~/.zshrc` or wha'eva:
 
 	[… usual stuff contained in .bash_profile or .zshrc or wha'eva …]
 	
@@ -40,13 +40,17 @@ Fork the repo then link to `prompt.sh` from within your `~/.bash_profile` or `~/
 	[… usual stuff contained in .bash_profile or .zshrc or wha'eva …]
 
 ***
-Note that I keep `prompt.sh` in Dropbox - not necessary to get this working (obviously), but I like to keep all my user shell intialisation files (`.bash_profile`/`.zshrc`/`.gitconfig`/`.inputrc`/`.hgrc` etc etc etc) in Dropbox - then symlink to them (I like the same prompt and history and shell behaviour on all my machines). It aids in the setup of new machines, and helps if they get stolen (which mine do).
+
+* Note that you should remove any pre-existing lines in those rc files that start with `export PS1=` (in bash) or `PROMPT=` (in zsh). For zsh, it is advisable, to also include the line `setopt PROMPT_SUBST` before you import `prompt.sh`.
+
+* Note that I (Jude) keep `prompt.sh` in Dropbox - not necessary to get this working (obviously), but I like to keep all my user shell intialisation files (`.bash_profile`/`.zshrc`/`.gitconfig`/`.inputrc`/`.hgrc` etc etc etc) in Dropbox - then symlink to them (I like the same prompt and history and shell behaviour on all my machines). It aids in the setup of new machines, and helps if they get stolen (which mine do).
 
 If you like this idea, but don't know how to create a symlink, then RTFM^H^H^H^H have a look at this example …
 
 	$ cd
 	$ mv .bash_history ~/Dropbox/home/ # move your bash_history to dropbox
 	$ ln -s ~/Dropbox/home/.bash_history .bash_history # create a symlink to your .bash_history	
+
 
 Author
 ------
