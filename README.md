@@ -10,7 +10,7 @@ Under zsh, when in a clean hg repo:
 
 ![zsh hg clean](https://raw.githubusercontent.com/dotcode/multi-shell-repo-prompt/master/img/zsh-hg-clean.png)
 
-It's been written to make it easy to tweak the colours and the characters used, so you can get it setup to dislay how you want without having to dirty your hands with too much of that filthy shell code that's like … _so_ from the 1970's. The aim when tweaking this was to (as far as possible) have one block of code that could be dropped into a bash or zsh initialisation file and "just work".
+It's been written to make it easy to tweak the colours and the characters used, so you can get it setup to display how you want without having to dirty your hands with too much of that filthy shell code that's like … _so_ from the 1970's. The aim when tweaking this was to (as far as possible) have one block of code that could be dropped into a bash or zsh initialisation file and "just work".
 
 I frequently switch between bash and zsh, and like my prompts to contain the same functionality - only differing in a couple of respects (it's nice if the prompt provides some visual indication of what shell you're under). To this end the default colours are slightly different, and outside of a repo the prompt character differs between bash and zsh - under bash it's '$', under zsh it's '%'. Trivially easy to change this to something you're happier with.
 
