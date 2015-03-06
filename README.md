@@ -4,11 +4,11 @@ This is a shell script that provides useful information (in your prompt) about t
 
 Under bash, when in a dirty git repo:
 
-![bash git dirty](https://raw.githubusercontent.com/joshtronic/multi-shell-repo-prompt/master/img/bash-git-dirty.png)
+![bash git dirty](https://raw.githubusercontent.com/dotcode/multi-shell-repo-prompt/master/img/bash-git-dirty.png)
 
 Under zsh, when in a clean hg repo:
 
-![zsh hg clean](https://raw.githubusercontent.com/joshtronic/multi-shell-repo-prompt/master/img/zsh-hg-clean.png)
+![zsh hg clean](https://raw.githubusercontent.com/dotcode/multi-shell-repo-prompt/master/img/zsh-hg-clean.png)
 
 It's been written to make it easy to tweak the colours and the characters used, so you can get it setup to dislay how you want without having to dirty your hands with too much of that filthy shell code that's like … _so_ from the 1970's. The aim when tweaking this was to (as far as possible) have one block of code that could be dropped into a bash or zsh initialisation file and "just work".
 
