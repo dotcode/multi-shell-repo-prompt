@@ -219,7 +219,7 @@ function repo_status {
 			if [[ "$changes" != "" ]]; then
 				changes="${changes}, "
 			fi
-			changes="${changes}${removed} renamed"
+			changes="${changes}${renamed} renamed"
 		fi
 		
 		# missing file count
